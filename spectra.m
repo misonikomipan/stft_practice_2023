@@ -1,4 +1,4 @@
-[readVoice, fs] = audioread('kitamuravoice.wav');
+[readVoice, fs] = audioread('./input/kitamuravoice.wav');
 %sound(readVoice, fs);
 monoVoice = readVoice(:, 1);
 monoSpec = fft(monoVoice);

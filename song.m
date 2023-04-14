@@ -5,5 +5,5 @@ sigLen = 10;
 t = 0 : 1/fs : sigLen;
 wave = sin(2 * pi * f * t);
 %sound(wave, fs);
-filename = 'song.wav';
+filename = './output/song.wav';
 audiowrite(filename, wave, fs);

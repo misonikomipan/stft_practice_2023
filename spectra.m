@@ -1,7 +1,7 @@
 [readVoice, fs] = audioread('./input/kitamuravoice.wav');   % 音を読み込む
 % sound(readVoice, fs); % 音を鳴らす
 monoVoice = readVoice(:, 1);    % 1チャンネルにする(ステレオからモノラルに変換)
-shiftLen = length(monoVoice); % 長さを測る
+sigLen = length(monoVoice); % 長さを測る
 fftLen = 4096; % フーリエ変換長
 shiftLen = fftLen / 2; % シフト長
 monoVoice = [monoVoice; zeros(shiftLen-mod(monoVoice, shiftLen), 1)]; % 信号の長さ調節(STFT用)

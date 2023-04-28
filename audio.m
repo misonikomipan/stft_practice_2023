@@ -8,6 +8,6 @@ recObj = audiorecorder(fs,nBit,nChannel); % オブジェクト生成
 disp("Begin speaking.")
 recordblocking(recObj,recDuration);
 disp("End of recording.")
-y = getaudiodata(recObj);   % データを配列に格納
+signal = getaudiodata(recObj);   % データを配列に格納
 play(recObj);   % 再生
-audiowrite('./input/myonvoice.wav', y, fs);   % 音を保存
+audiowrite('./input/myonvoice.wav', signal, fs);   % 音を保存

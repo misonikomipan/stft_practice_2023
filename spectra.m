@@ -1,4 +1,4 @@
-[readVoice, fs] = audioread('./input/kitamuravoice.wav');   % 音を読み込む
+[readVoice, fs] = audioread('./input/myonvoice.wav');   % 音を読み込む
 % sound(readVoice, fs); % 音を鳴らす
 monoVoice = readVoice(:, 1);    % 1チャンネルにする(ステレオからモノラルに変換)
 sigLen = length(monoVoice); % 長さを測る
@@ -15,4 +15,4 @@ for iIter = 1 : adjustment % 繰り返し回数はスペクトログラムの列
 end
 powerSpec = abs(spectrogram) .^ 2; % パワースペクトル表示
 powerSpec = 10*log10(powerSpec);    % パワースペクトルをデシベルで表示
-createfigure(powerSpec(1:fftLen/2, :)) % パワースペクトル表示
+createfigure(powerSpec(1:fftLen/2+1, :)) % パワースペクトル表示

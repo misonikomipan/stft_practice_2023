@@ -1,4 +1,4 @@
-[readVoice, fs] = audioread('./input/kitamuravoice.wav');   % 音を読み込む
+[readVoice, fs] = audioread('./input/myonvoice.wav');   % 音を読み込む
 % sound(readVoice, fs); % 音を鳴らす
 monoVoice = readVoice(:, 1);    % 1チャンネルにする(ステレオからモノラルに変換)
 sigLen = length(monoVoice); % 長さを測る
